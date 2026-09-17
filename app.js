@@ -11,22 +11,27 @@ const CONFIG = {
 
   /* ---- when ---- */
   // ISO 8601 with your timezone offset. +05:30 is India.
-  // Saturday 26 September 2026, doors at 8pm.
+  // Saturday 26 September 2026. The race is the first thing that
+  // happens, so the countdown runs to that, not to the party.
+  raceISO:  "2026-09-26T16:30:00+05:30",
   startISO: "2026-09-26T20:00:00+05:30",
   endISO:   "2026-09-27T02:00:00+05:30",
 
   /* ---- where ---- */
-  venue:   "Dwarka, New Delhi",   // <- drop the exact sector and block in here
-  address: "Dwarka, New Delhi",
-  dress:   "Black, or something loud",
+  // The exact address is not on the site on purpose, it goes out
+  // personally. Change venueNote if you would rather publish it.
+  venue:     "The Airbnb, Dwarka",
+  venueNote: "Pin goes out on WhatsApp",
+  address:   "Dwarka, New Delhi",
+  dress:     "Black, or something loud",
 
   /* ---- rsvp destinations ---- */
   // Country code, no plus sign, no spaces. 91 = India.
-  whatsapp: "919999999999",
+  whatsapp: "919888816669",
   email:    "gurichatha01@gmail.com",
 
   /* ---- easter egg payoff ---- */
-  secretPlace: "The car park behind the 24 hour dhaba. Follow the noise."
+  secretPlace: "Ask either of us for the pin. It is not going on a website."
 };
 
 /* ========================================================= */
@@ -40,6 +45,10 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 --------------------------------------------------------- */
 
 const partyDate = new Date(CONFIG.startISO);
+const raceDate  = new Date(CONFIG.raceISO);
+
+const clockTime = (d) =>
+  d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
 
 function fillContent() {
   const names = CONFIG.hostA + " & " + CONFIG.hostB;
@@ -54,14 +63,20 @@ function fillContent() {
   const long = partyDate.toLocaleDateString(undefined, {
     weekday: "long", day: "numeric", month: "long"
   });
-  const time = partyDate.toLocaleTimeString(undefined, {
-    hour: "numeric", minute: "2-digit"
-  });
 
   $('[data-fill="dateLong"]').textContent = long;
-  $('[data-fill="time"]').textContent = time;
-  $('[data-fill="venue"]').textContent = CONFIG.venue;
+  $('[data-fill="raceTime"]').textContent = clockTime(raceDate);
+  $('[data-fill="time"]').textContent = clockTime(partyDate);
   $('[data-fill="dress"]').textContent = CONFIG.dress;
+
+  const venueCell = $('[data-fill="venue"]');
+  venueCell.textContent = CONFIG.venue;
+  if (CONFIG.venueNote) {
+    const note = document.createElement("small");
+    note.className = "stub__note";
+    note.textContent = CONFIG.venueNote;
+    venueCell.appendChild(note);
+  }
 
   $("#mapLink").href =
     "https://www.google.com/maps/search/?api=1&query=" +
@@ -82,11 +97,14 @@ function buildCalendarLink() {
     "BEGIN:VEVENT",
     "UID:" + Date.now() + "@twentyfive",
     "DTSTAMP:" + icsStamp(new Date().toISOString()),
-    "DTSTART:" + icsStamp(CONFIG.startISO),
+    // the calendar block covers the whole thing, race included
+    "DTSTART:" + icsStamp(CONFIG.raceISO),
     "DTEND:" + icsStamp(CONFIG.endISO),
     "SUMMARY:" + CONFIG.hostA + " & " + CONFIG.hostB + " turn 25",
     "LOCATION:" + CONFIG.venue + ", " + CONFIG.address,
-    "DESCRIPTION:Two birthdays one night. Dress code: " + CONFIG.dress,
+    "DESCRIPTION:Race screening from " + clockTime(raceDate) +
+      "\\, party from " + clockTime(partyDate) +
+      ". Dress code: " + CONFIG.dress,
     "END:VEVENT",
     "END:VCALENDAR"
   ].join("\r\n");
@@ -164,7 +182,8 @@ function initCountdown() {
   const pad = (n) => String(n).padStart(2, "0");
 
   const tick = () => {
-    let diff = partyDate.getTime() - Date.now();
+    // counts to the race, which is the first thing that happens
+    let diff = raceDate.getTime() - Date.now();
     if (diff <= 0) {
       box.classList.add("done");
       cells.d.textContent = cells.h.textContent = "00";
@@ -593,7 +612,7 @@ function eggAfter() {
       secret.hidden = false;
       $("#secretWhere").textContent = CONFIG.secretPlace;
       confetti(40);
-      findEgg("after", "You found the afterparty.");
+      findEgg("after", "That is where it is.");
       setTimeout(() => secret.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" }), 350);
     }, 800);
   };

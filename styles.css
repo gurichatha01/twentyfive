@@ -375,6 +375,17 @@ body.kick .device { animation: kick 0.45s var(--ease); }
   text-transform: uppercase;
 }
 
+.stub__note {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
 .stub__perf {
   height: 1px;
   margin: 6px 0;
