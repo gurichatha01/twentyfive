@@ -1004,6 +1004,83 @@ body.rave .blobs i { opacity: 0.6; filter: blur(34px); }
 body.rave .wave { animation-duration: 2.4s; }
 
 /* =========================================================
+   THE HOUSE
+   Asymmetric bento, exactly six cells for six things. Each
+   cell gets its own material so this does not read as six
+   identical boxes with text in them.
+   ========================================================= */
+
+.house__lead {
+  margin: -8px 0 24px;
+  max-width: 34ch;
+  color: var(--dim);
+  animation: floaty 7s ease-in-out infinite;
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.cell {
+  position: relative;
+  min-height: 132px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  animation-name: floaty, flickerBorder;
+  animation-duration: 7s, 5.5s;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+.cell h3 {
+  margin: 0 0 5px;
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1;
+  text-transform: uppercase;
+  animation: wob 6s ease-in-out infinite;
+}
+.cell p { margin: 0; font-size: 12.5px; line-height: 1.45; color: var(--dim); }
+
+/* the screen and the chef take the full width, the rest pair up */
+.cell--screen { grid-column: 1 / -1; min-height: 168px; }
+.cell--chef   { grid-column: 1 / -1; min-height: 118px; }
+
+.cell--pool    { animation-delay: 0.3s, 0.2s; }
+.cell--bar     { animation-delay: 0.6s, 0.4s; }
+.cell--terrace { animation-delay: 0.9s, 0.6s; }
+.cell--tub     { animation-delay: 1.2s, 0.8s; }
+.cell--chef    { animation-delay: 1.5s, 1.0s; }
+
+/* one material per cell */
+.cell--screen {
+  background: linear-gradient(155deg, var(--accent-d), #2a0703 72%);
+  border-color: var(--accent);
+}
+.cell--screen h3 { font-size: 27px; }
+.cell--screen p { color: rgba(255, 236, 230, 0.8); max-width: 26ch; }
+
+.cell--pool { background:
+  repeating-linear-gradient(45deg, rgba(242,236,225,0.05) 0 2px, transparent 2px 9px), var(--ink-2); }
+.cell--bar { background:
+  radial-gradient(rgba(242,236,225,0.14) 1px, transparent 1px) 0 0 / 10px 10px, var(--ink-3); }
+.cell--terrace { background:
+  radial-gradient(circle at 78% 14%, rgba(255,59,31,0.42), transparent 62%), var(--ink-2); }
+.cell--tub { background:
+  repeating-linear-gradient(-30deg, rgba(255,59,31,0.2) 0 5px, transparent 5px 15px), var(--ink-3); }
+.cell--chef {
+  background: var(--bone);
+  color: var(--ink);
+  border-color: var(--bone);
+}
+.cell--chef p { color: rgba(10, 10, 11, 0.68); }
+
+/* =========================================================
    FAKE BROADCAST
    Invented network, invented anchor, obvious satire.
    CRT chrome built from scanlines and a chyron, no logos.

@@ -20,9 +20,9 @@ const CONFIG = {
   /* ---- where ---- */
   // The exact address is not on the site on purpose, it goes out
   // personally. Change venueNote if you would rather publish it.
-  venue:     "The Airbnb, Dwarka",
-  venueNote: "Pin goes out on WhatsApp",
-  address:   "Dwarka, New Delhi",
+  venue:     "Le Manoir, Dwarka",
+  venueNote: "Sector 10. Flat pin on WhatsApp",
+  address:   "Sector 10 Market, Dwarka, New Delhi",
   dress:     "Black, or something loud",
 
   /* ---- rsvp destinations ---- */
