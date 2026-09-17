@@ -1047,15 +1047,14 @@ body.rave .wave { animation-duration: 2.4s; }
 }
 .cell p { margin: 0; font-size: 12.5px; line-height: 1.45; color: var(--dim); }
 
-/* the screen and the chef take the full width, the rest pair up */
-.cell--screen { grid-column: 1 / -1; min-height: 168px; }
-.cell--chef   { grid-column: 1 / -1; min-height: 118px; }
+/* four cells: the screen opens full width, the pool table and bar
+   pair up, the terrace closes full width */
+.cell--screen  { grid-column: 1 / -1; min-height: 168px; }
+.cell--terrace { grid-column: 1 / -1; min-height: 124px; }
 
 .cell--pool    { animation-delay: 0.3s, 0.2s; }
 .cell--bar     { animation-delay: 0.6s, 0.4s; }
 .cell--terrace { animation-delay: 0.9s, 0.6s; }
-.cell--tub     { animation-delay: 1.2s, 0.8s; }
-.cell--chef    { animation-delay: 1.5s, 1.0s; }
 
 /* one material per cell */
 .cell--screen {
@@ -1071,14 +1070,7 @@ body.rave .wave { animation-duration: 2.4s; }
   radial-gradient(rgba(242,236,225,0.14) 1px, transparent 1px) 0 0 / 10px 10px, var(--ink-3); }
 .cell--terrace { background:
   radial-gradient(circle at 78% 14%, rgba(255,59,31,0.42), transparent 62%), var(--ink-2); }
-.cell--tub { background:
-  repeating-linear-gradient(-30deg, rgba(255,59,31,0.2) 0 5px, transparent 5px 15px), var(--ink-3); }
-.cell--chef {
-  background: var(--bone);
-  color: var(--ink);
-  border-color: var(--bone);
-}
-.cell--chef p { color: rgba(10, 10, 11, 0.68); }
+.cell--terrace p { max-width: 40ch; }
 
 /* =========================================================
    FAKE BROADCAST

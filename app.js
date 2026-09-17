@@ -669,7 +669,7 @@ function eggQueue() {
   const keys = [
     CONFIG.hostA.toLowerCase(), CONFIG.hostB.toLowerCase(),
     "birthday", "happy birthday",
-    "seedhe maut", "tame impala", "a little piece of heaven", "avenged sevenfold"
+    "seedhe maut", "tame impala", "kanye", "kanye west", "runaway", "ye"
   ];
 
   input.addEventListener("input", () => {

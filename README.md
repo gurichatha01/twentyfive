@@ -48,7 +48,7 @@ preset, that is wrong, it would try to run a server instead of serving
 1. Tap the big **25** five times. Rave mode, and the beat switches to the rock pattern. Five more taps turns it off.
 2. Press and hold the **cake** in the 11 PM act for about a second. Unlocks the afterparty section.
 3. **Shake the phone.** Drops an 808 and kicks the screen. Needs a real device, and on iOS it only arms after you have tapped the beat button once, because that is when the motion permission is requested.
-4. Type a band name into the **song request** box. Try `seedhe maut`, `tame impala`, `avenged sevenfold`, or either of your names.
+4. Type an artist into the **song request** box. Try `seedhe maut`, `tame impala`, `kanye`, `runaway`, or either of your names.
 5. Triple tap the **year** in the footer. Lists the other four. On a desktop keyboard the sequence `up up down down b d a y` does the same.
 
 Progress is kept in `localStorage`, so the counter survives a reload.
