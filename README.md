@@ -28,7 +28,7 @@ Still on placeholders and needing your input:
 ## Running it locally
 
 ```bash
-node server.js
+node tools/dev-server.js
 ```
 
 Then open http://localhost:5173. The server is only for local preview, it is not
@@ -36,9 +36,12 @@ used in production and nothing imports it.
 
 ## Deploying
 
-Push to GitHub, then on Vercel: New Project, import the repo, framework preset
-"Other", no build command, output directory `.`. Vercel's auto-detection gets
-this right on its own.
+Push to GitHub, then on Vercel: New Project, import the repo, Application Preset
+**Other**, no build command, root directory `./`.
+
+`vercel.json` pins this to a static deploy. If Vercel ever suggests the "Node"
+preset, that is wrong, it would try to run a server instead of serving
+`index.html`. Pick "Other".
 
 ## The five easter eggs
 
@@ -81,5 +84,6 @@ index.html     markup
 styles.css     all styling, including the motion layer
 app.js         CONFIG, beat engine, countdown, broadcast, easter eggs, RSVP
 bg.js          the WebGL background
-server.js      local preview only
+vercel.json    pins the static deploy
+tools/         local preview server, not used in production
 ```

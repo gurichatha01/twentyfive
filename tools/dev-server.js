@@ -3,7 +3,8 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-const ROOT = __dirname;
+// this file lives in tools/, the site is served from the parent
+const ROOT = path.join(__dirname, "..");
 const PORT = 5173;
 
 const TYPES = {
