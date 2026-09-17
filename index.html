@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0b">
+<title>25 / Guri &amp; Lakshit</title>
+<meta name="description" content="Two birthdays, one night. RSVP inside.">
+<meta property="og:title" content="Guri &amp; Lakshit turn 25">
+<meta property="og:description" content="Two birthdays, one night. RSVP inside.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- ARTIFACT:START -->
+<div class="stage">
+  <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wave" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="strobe" aria-hidden="true"></div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <div class="device" id="device">
+
+    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+    <button class="sound" id="soundBtn" type="button" aria-pressed="false">
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span class="sound__label" id="soundLabel">Beat off</span>
+    </button>
+
+    <!-- 1. HERO -->
+    <header class="hero" id="hero">
+      <p class="eyebrow reveal">You are invited</p>
+
+      <div class="hero__mark" id="bigNum" role="button" tabindex="0" aria-label="Twenty five">
+        <span class="hero__num">25</span>
+        <span class="hero__num hero__num--ghost" aria-hidden="true">25</span>
+      </div>
+
+      <h1 class="hero__title reveal">
+        <span class="scramble" data-scramble="GURI">GURI</span>
+        <span class="amp">&amp;</span>
+        <span class="scramble" data-scramble="LAKSHIT">LAKSHIT</span>
+      </h1>
+
+      <p class="hero__sub reveal">Two birthdays, one night, and a playlist that peaks around 2am.</p>
+
+      <a class="btn btn--primary reveal" href="#rsvp">RSVP</a>
+    </header>
+
+    <!-- 2. MARQUEE BAND -->
+    <div class="band" aria-hidden="true">
+      <div class="band__track">
+        <span>TWENTY FIVE</span><span class="dot"></span><span>TWENTY FIVE</span><span class="dot"></span>
+        <span>TWENTY FIVE</span><span class="dot"></span><span>TWENTY FIVE</span><span class="dot"></span>
+        <span>TWENTY FIVE</span><span class="dot"></span><span>TWENTY FIVE</span><span class="dot"></span>
+      </div>
+    </div>
+
+    <!-- 3. TICKET STUB -->
+    <section class="section stub-wrap" id="details">
+      <h2 class="h2 reveal">The where and when</h2>
+      <div class="stub reveal">
+        <div class="stub__row"><span class="stub__k">Date</span><span class="stub__v" data-fill="dateLong">Saturday 10 October</span></div>
+        <div class="stub__row"><span class="stub__k">Doors</span><span class="stub__v" data-fill="time">9:00 PM</span></div>
+        <div class="stub__row"><span class="stub__k">Place</span><span class="stub__v" data-fill="venue">The Terrace, Sector 9</span></div>
+        <div class="stub__row"><span class="stub__k">Wear</span><span class="stub__v" data-fill="dress">Black, or something loud</span></div>
+        <div class="stub__perf" aria-hidden="true"></div>
+        <div class="stub__acts">
+          <a class="stub__link" id="mapLink" href="#" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="stub__link" id="calLink" href="#" download="birthday.ics">Add to calendar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. STICKY STACK -->
+    <section class="stack" id="acts" aria-label="How the night runs">
+      <article class="act act--1">
+        <div class="act__inner">
+          <span class="act__time">9 PM</span>
+          <h3 class="act__h">Doors, drinks, and the slow half of the playlist</h3>
+          <p class="act__p">Come early if you actually want to hear each other talk.</p>
+        </div>
+      </article>
+      <article class="act act--2">
+        <div class="act__inner">
+          <span class="act__time">11 PM</span>
+          <h3 class="act__h">Cake, then the bass goes up</h3>
+          <p class="act__p">Two cakes, no negotiation about candles. Hold this one down for a second.</p>
+          <button class="vinyl" id="vinyl" type="button" aria-label="Cake"><span></span></button>
+        </div>
+      </article>
+      <article class="act act--3">
+        <div class="act__inner">
+          <span class="act__time">1 AM</span>
+          <h3 class="act__h">Requests only</h3>
+          <p class="act__p">Bring your worst song. It is going on whether we like it or not. A Little Piece of Heaven gets played in full, all seven minutes.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 5. LINEUP -->
+    <section class="section lineup-wrap" id="lineup">
+      <h2 class="h2 reveal">On the speakers</h2>
+      <div class="lineup" role="list">
+        <div class="tile tile--a" role="listitem"><span class="tile__n">01</span><h3>Desi hip hop</h3><p>Seedhe Maut, Yashraj, Chaar Diwaari, Rawal.</p></div>
+        <div class="tile tile--b" role="listitem"><span class="tile__n">02</span><h3>The rap block</h3><p>Kanye, Travis, JPEGMAFIA, Carti, 21 Savage.</p></div>
+        <div class="tile tile--c" role="listitem"><span class="tile__n">03</span><h3>Rock</h3><p>Avenged Sevenfold, Pearl Jam, Alice In Chains, Queen.</p></div>
+        <div class="tile tile--d" role="listitem"><span class="tile__n">04</span><h3>Neo psych</h3><p>Tame Impala, MGMT, Glass Animals, Gorillaz.</p></div>
+        <div class="tile tile--f" role="listitem"><span class="tile__n">05</span><h3>Punjabi</h3><p>AP Dhillon, Diljit, Arjun.</p></div>
+        <div class="tile tile--e" role="listitem"><span class="tile__n">06</span><h3>Your request</h3><p>Put it in the form below.</p></div>
+      </div>
+    </section>
+
+    <div class="band band--rev" aria-hidden="true">
+      <div class="band__track">
+        <span>TURN IT UP</span><span class="dot"></span><span>BRING NOISE</span><span class="dot"></span>
+        <span>TURN IT UP</span><span class="dot"></span><span>BRING NOISE</span><span class="dot"></span>
+        <span>TURN IT UP</span><span class="dot"></span><span>BRING NOISE</span><span class="dot"></span>
+      </div>
+    </div>
+
+    <!-- 6. COUNTDOWN -->
+    <section class="section count-wrap" id="countdown">
+      <p class="eyebrow reveal">Until doors</p>
+      <div class="count reveal" id="count" role="timer">
+        <div class="count__cell"><b id="cd-d">00</b><span>days</span></div>
+        <div class="count__cell"><b id="cd-h">00</b><span>hrs</span></div>
+        <div class="count__cell"><b id="cd-m">00</b><span>min</span></div>
+        <div class="count__cell"><b id="cd-s">00</b><span>sec</span></div>
+      </div>
+    </section>
+
+    <!-- 6b. FAKE BROADCAST (satire, invented network, invented anchor) -->
+    <section class="section bcast" id="broadcast">
+      <div class="tv reveal">
+        <div class="tv__bar">
+          <span class="tv__net">CHANNEL 25</span>
+          <span class="tv__live"><i aria-hidden="true"></i>LIVE</span>
+          <span class="tv__clock" id="tvClock">21:04</span>
+        </div>
+
+        <div class="tv__screen">
+          <div class="tv__scan" aria-hidden="true"></div>
+          <p class="tv__kicker">Breaking</p>
+          <h2 class="tv__head">National emergency declared as two men turn 25 on the same night</h2>
+          <p class="tv__anchor">
+            <b>Rhea Bhalla, at the scene.</b>
+            <span id="anchorScript" data-script="Residents across Dwarka are advised to expect elevated bass from 11pm. Officials confirm two cakes have entered the building. We are being told the playlist cannot be stopped."></span><i class="caret" aria-hidden="true"></i>
+          </p>
+        </div>
+
+        <div class="tv__chyron">
+          <div class="tv__crawl">
+            <span>Dwarka rated for sixty, ninety expected</span><b></b>
+            <span>Cake declines to take further questions</span><b></b>
+            <span>Seven minutes of Avenged Sevenfold confirmed for 1am</span><b></b>
+            <span>RSVP or be formally listed as missing</span><b></b>
+            <span>Dwarka rated for sixty, ninety expected</span><b></b>
+            <span>Cake declines to take further questions</span><b></b>
+            <span>Seven minutes of Avenged Sevenfold confirmed for 1am</span><b></b>
+            <span>RSVP or be formally listed as missing</span><b></b>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="bcast__h reveal">Conditions at the venue</h3>
+      <div class="wx reveal">
+        <div class="wx__cell"><b>24</b><span>degrees, rooftop</span></div>
+        <div class="wx__cell"><b class="flick">118</b><span>decibels, peak</span></div>
+        <div class="wx__cell"><b>78</b><span>percent fog, machine</span></div>
+        <div class="wx__cell"><b>100</b><span>percent dancing</span></div>
+      </div>
+      <p class="wx__note">Forecast is a joke. The fog machine is not.</p>
+
+      <h3 class="bcast__h reveal">We spoke to the cake</h3>
+      <div class="qa reveal">
+        <p class="qa__q">You are being called the centrepiece. Is that pressure?</p>
+        <p class="qa__a">There are two names on me. Only one is spelled right.</p>
+        <p class="qa__q">Anything for the guests?</p>
+        <p class="qa__a">Arrive before eleven. I do not last.</p>
+        <p class="qa__q">And after that?</p>
+        <p class="qa__a">For me there is no after.</p>
+      </div>
+    </section>
+
+    <!-- SECRET (unlocked by easter egg) -->
+    <section class="secret" id="secret" hidden>
+      <h2 class="h2">The after</h2>
+      <p class="secret__p">When the terrace shuts down, we move. Same night, no announcement.</p>
+      <p class="secret__where" id="secretWhere">Ask either of us at 2am.</p>
+    </section>
+
+    <!-- 7. RSVP -->
+    <section class="section rsvp" id="rsvp">
+      <h2 class="h2 reveal">Are you in</h2>
+      <form class="form reveal" id="rsvpForm" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="So we know who showed up" required>
+          <p class="err" id="e-name" hidden>Put a name in first.</p>
+        </div>
+
+        <fieldset class="field">
+          <legend>Coming?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="attend" value="Yes, I am in" checked><span>Yes</span></label>
+            <label class="choice"><input type="radio" name="attend" value="Maybe, will confirm"><span>Maybe</span></label>
+            <label class="choice"><input type="radio" name="attend" value="Cannot make it"><span>Can not</span></label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="f-guests">Bringing anyone</label>
+          <select id="f-guests" name="guests">
+            <option value="Just me">Just me</option>
+            <option value="Plus 1">Plus 1</option>
+            <option value="Plus 2">Plus 2</option>
+            <option value="Plus 3 or more">Plus 3 or more</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-song">One song for the queue</label>
+          <input id="f-song" name="song" type="text" placeholder="Artist, track">
+          <p class="help">Optional. It genuinely gets played.</p>
+        </div>
+
+        <button class="btn btn--primary btn--full" id="waBtn" type="submit">Send on WhatsApp</button>
+        <p class="alt">Not on WhatsApp? <a href="#" id="mailBtn">Send it by email</a></p>
+        <p class="formnote" id="formNote" role="status"></p>
+      </form>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer class="foot">
+      <p class="foot__names" id="footNames">Guri &amp; Lakshit</p>
+      <button class="foot__year" id="footYear" type="button">25 / <span id="yearTag">2026</span></button>
+    </footer>
+
+  </div><!-- /device -->
+
+  <p class="desknote" aria-hidden="true">Made for a phone. Open it on one.</p>
+</div>
+
+<div class="ticker" id="ticker" aria-hidden="true">
+  <span class="ticker__tag">Breaking</span>
+  <div class="ticker__win">
+    <div class="ticker__track">
+      <span>Two subjects confirmed aged twenty five</span><b></b>
+      <span>Dwarka declared a bass zone from 11pm</span><b></b>
+      <span>Cake interview airs below</span><b></b>
+      <span>Requests taken from 1am, no refunds</span><b></b>
+      <span>Two subjects confirmed aged twenty five</span><b></b>
+      <span>Dwarka declared a bass zone from 11pm</span><b></b>
+      <span>Cake interview airs below</span><b></b>
+      <span>Requests taken from 1am, no refunds</span><b></b>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<!-- ARTIFACT:END -->
+<script src="bg.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
